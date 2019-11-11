@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div style="text-align: center">
+<form th:action="@{/login}" method="get">
+    <div align="center">
+        <input id="username" type="text" placeholder="Enter">
+        <input type="text">
+        <input type="button" onclick="login()">
+        <input type="submit" value="submit">
+    </div>
+</form>
+</div>
+<script>
+    function login() {
+        console.log("Asdad")
+        $("#username").hide();
+        $.ajax({
+            url:"giveRest/amir",
+            type:"get",
+            success:function (res) {
+                console.log(res);
+            }
+        })
+    }
+</script>
+</body>
+</html>
